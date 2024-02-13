@@ -1,4 +1,12 @@
 {
+	"name": "honor-earbuds-3-pro-clone",
+	"scripts": {
+		"build": "pnpm run minify-css && pnpm run copy-assets",
+		"dev": "pnpm dlx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+		"clean": "pnpm dlx rimraf dist",
+		"minify-css": "pnpm dlx tailwindcss -o ./src/css/output.css --minify",
+		"copy-assets": "pnpm dlx copyfiles -f -E ./src/img/*.* ./dist/img && copyfiles ./src/css/* ./dist/css/"
+	},
 	"devDependencies": {
 		"tailwindcss": "^3.4.1"
 	}
